@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ecocycle-api
+    name: Trashcycle-api
     runtime: node
     rootDir: backend
     buildCommand: npm install
