@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://https://trashcycle.onrender.com/api/:path*" },
+    { "source": "/api/:path*", "destination": "https://trashcycle.onrender.com/api/:path*" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
