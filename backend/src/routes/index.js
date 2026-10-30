@@ -1,0 +1,25 @@
+import { Router } from 'express';
+import { authLimiter } from '../middleware/rateLimiter.js';
+import authRoutes from './auth.routes.js';
+import userRoutes from './user.routes.js';
+import pickupRoutes from './pickup.routes.js';
+import categoryRoutes from './category.routes.js';
+import locationRoutes from './location.routes.js';
+import driverRoutes from './driver.routes.js';
+import notificationRoutes from './notification.routes.js';
+import rewardRoutes from './reward.routes.js';
+import adminRoutes from './admin.routes.js';
+
+const v1 = Router();
+v1.use('/auth/login', authLimiter);
+v1.use('/auth/register', authLimiter);
+v1.use('/auth', authRoutes);
+v1.use('/users', userRoutes);
+v1.use('/pickups', pickupRoutes);
+v1.use('/categories', categoryRoutes);
+v1.use('/locations', locationRoutes);
+v1.use('/drivers', driverRoutes);
+v1.use('/notifications', notificationRoutes);
+v1.use('/rewards', rewardRoutes);
+v1.use('/admin', adminRoutes);
+export default v1;
