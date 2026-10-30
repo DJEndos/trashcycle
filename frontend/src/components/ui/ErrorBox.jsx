@@ -1,0 +1,1 @@
+export const ErrorBox = ({ msg, retry }) => msg ? <div role="alert" className="rounded-xl bg-red-50 p-3 text-sm text-red-700">{msg} {retry && <button className="font-semibold underline" onClick={retry}>Retry</button>}</div> : null;
