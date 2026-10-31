@@ -29,7 +29,7 @@ function Overview() {
           <Stat label="Cancelled / rejected" value={(s.cancelled || 0) + (s.rejected || 0)} /><Stat label="Confirmed" value={s.confirmed || 0} />
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
-          <div className="card p-4 lg:col-span-2"><p className="mb-2 font-semibold">Daily collection (kg)</p>
+          <div className="card p-4 lg:col-span-2"><p className="mb-2 font-semibold">Daily collections (kg)</p>
             {data.daily.length ? <ResponsiveContainer width="100%" height={240}><BarChart data={data.daily}><CartesianGrid strokeDasharray="3 3" vertical={false} /><XAxis dataKey="_id" tick={{ fontSize: 11 }} /><YAxis tick={{ fontSize: 11 }} /><Tooltip /><Bar dataKey="kg" fill="#168452" radius={[4, 4, 0, 0]} /></BarChart></ResponsiveContainer> : <p className="py-10 text-center text-sm text-slate-500">No collections recorded in this period.</p>}</div>
           <div className="card p-4"><p className="mb-2 font-semibold">Requests by category</p>
             {data.byCategory.length ? <ResponsiveContainer width="100%" height={240}><PieChart><Pie data={data.byCategory} dataKey="requests" nameKey="name" outerRadius={80}>{data.byCategory.map((c, i) => <Cell key={i} fill={c.color || '#168452'} />)}</Pie><Tooltip /></PieChart></ResponsiveContainer> : <p className="py-10 text-center text-sm text-slate-500">No requests yet.</p>}</div>
@@ -142,7 +142,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen lg:flex">
       <aside className="flex gap-1 overflow-x-auto bg-eco-dark p-3 text-white lg:sticky lg:top-0 lg:h-screen lg:w-56 lg:flex-col lg:p-4">
-        <div className="hidden items-center gap-2 pb-4 text-lg font-bold lg:flex"><Leaf className="fill-white" />EcoCycle</div>
+        <div className="hidden items-center gap-2 pb-4 text-lg font-bold lg:flex"><Leaf className="fill-white" />TrashCycle</div>
         {TABS.map(([k, l, I]) => <button key={k} onClick={() => setTab(k)} className={`flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm ${tab === k ? 'bg-white/15 font-semibold' : 'opacity-80 hover:bg-white/10'}`}><I size={18} />{l}</button>)}
         <div className="flex-1" />
         <button onClick={logout} className="flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm opacity-80 hover:bg-white/10"><LogOut size={18} />Log out ({user.name.split(' ')[0]})</button>
