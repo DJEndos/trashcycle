@@ -13,6 +13,7 @@ import adminRoutes from './admin.routes.js';
 const v1 = Router();
 v1.use('/auth/login', authLimiter);
 v1.use('/auth/register', authLimiter);
+v1.delete('/users/me', authLimiter); // deleting an account re-checks the password
 v1.use('/auth', authRoutes);
 v1.use('/users', userRoutes);
 v1.use('/pickups', pickupRoutes);

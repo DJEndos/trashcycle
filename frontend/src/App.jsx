@@ -15,7 +15,9 @@ import DropOffMap from './pages/user/DropOffMap.jsx';
 import Profile from './pages/user/Profile.jsx';
 import Notifications from './pages/user/Notifications.jsx';
 import Tutorial from './pages/user/Tutorial.jsx';
+import DeleteAccount from './pages/user/DeleteAccount.jsx';
 import AdminDashboard from './pages/admin/AdminDashboard.jsx';
+
 
 export default function App() {
   return (
